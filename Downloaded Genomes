@@ -1,0 +1,7 @@
+
+  
+  
+First need to download the genomes
+Use efetch
+
+ efetch -db=nucleotide -id=CP000141.1 -format=fastq>C.hydro_6008.fastq
