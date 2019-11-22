@@ -1,7 +1,18 @@
-
+First I need to download my genomes
+  
+  For my Neisseria meningitidis
+  I went to the ENA website and found my data set and downloaded (bulk download files) the fastq files for my raw reads https://www.ebi.ac.uk/ena/data/view/PRJEB9481
+  
+  Then after everything is downloaded I used WinSCP to move my folder of all of my raw reads into my scratch folder so that I can use it on the command line
   
   
-First need to download the genomes
-Use efetch
+Next I need to perform fastqc
+try renaming everything so it'll be like 1, 2, 3, since you have to do fastqc on everysince read
 
- efetch -db=nucleotide -id=CP000141.1 -format=fastq>C.hydro_6008.fastq
+then I need to Quality trim 
+
+
+
+ERR1124367_2.fastq.gz had an x but it looked like it downloaded properly
+
+
