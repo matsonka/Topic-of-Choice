@@ -9,7 +9,7 @@ First I need to download my genomes
 Next I need to perform fastqc
 try renaming everything so it'll be like 1, 2, 3, since you have to do fastqc on everysince read
 
-then I need to Quality trim 
+then I won't do any quality trimming with cutadapt because the reads are of good quality, select random numbers to do fast qc with
 
 
 
