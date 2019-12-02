@@ -7,7 +7,11 @@ First I need to download my genomes
   
   
 Next I need to perform fastqc
-try renaming everything so it'll be like 1, 2, 3, since you have to do fastqc on everysince read
+try renaming everything so it'll be like 1, 2, 3, since you have to do fastqc on everysince read (did not do this)
+
+performed fastqc
+for example: fastqc ERR1124353_1.fastq.gz
+did this for all of my reads for both the Nisseria and Moraxella reads
 
 then I won't do any quality trimming with cutadapt because the reads are of good quality, select random numbers to do fast qc with
 
