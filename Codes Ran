@@ -34,3 +34,7 @@ For some of my mapping of my reads to the reference genome I was getting the fol
 terminate called after throwing an instance of 'int'
 (ERR): bowtie2-align died with signal 6 (ABRT) (core dumped)"
 
+
+bowtie2 -x Neisseria -1 ERR903349_1.fastq.gz -2 ERR903349_2.fastq.gz -S 1.sam
+
+
