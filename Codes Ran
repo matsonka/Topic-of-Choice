@@ -19,7 +19,18 @@ I didn't do quality trimming with cutadapt for all of my reads because from look
 
 
 aligned my reads using bowtie2
+activate the RNASeq environment: ran command conda activate RNASeq
+
+index the reference genome so that I can search it
+bowtie2-build Moraxella Reference Genome.txt Moraxella
 
 
+map my reads to the indexed genome
+bowtie2 -x Moraxella -1 ERR3410267_1.fastq.gz -2 ERR3410267_2.fastq.gz -S 1.sam
 
+
+For some of my mapping of my reads to the reference genome I was getting the following error:
+"Error, fewer reads in the file specified with -1 than in file specified with -2
+terminate called after throwing an instance of 'int'
+(ERR): bowtie2-align died with signal 6 (ABRT) (core dumped)"
 
