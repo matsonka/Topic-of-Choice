@@ -135,6 +135,13 @@ samtools view -b 2.sam | samtools sort - > 2.bam
 samtools view -b 3.sam | samtools sort - > 3.bam
 samtools view -b 4.sam | samtools sort - > 4.bam
 samtools view -b 5.sam | samtools sort - > 5.bam
+samtools view -b 6.sam | samtools sort - > 6.bam
+samtools view -b 7.sam | samtools sort - > 7.bam
+samtools view -b 8.sam | samtools sort - > 8.bam
+samtools view -b 9.sam | samtools sort - > 9.bam
+samtools view -b 10.sam | samtools sort - > 10.bam
+samtools view -b 11.sam | samtools sort - > 11.bam
+samtools view -b 12.sam | samtools sort - > 12.bam
 them putty says "[bam_sort_core] merging from 1 files and 1 in-memory blocks...
 
 Need to index the sorted .bam file
@@ -143,6 +150,13 @@ samtools index 2.bam
 samtools index 3.bam
 samtools index 4.bam
 samtools index 5.bam
+samtools index 6.bam
+samtools index 7.bam
+samtools index 8.bam
+samtools index 9.bam
+samtools index 10.bam
+samtools index 11.bam
+
 
 
 Variant Calling
@@ -199,9 +213,15 @@ bcftools mpileup -f Neisseria.txt 3.bam | bcftools call -mv -Ob --ploidy 1 -o ra
 
 Now doing this for all of the files
 bcftools mpileup -f Neisseria.txt 1.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
-bcftools mpileup -f Neisseria.txt 2.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf
-bcftools mpileup -f Neisseria.txt 4.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf
-bcftools mpileup -f Neisseria.txt 5.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf
+bcftools mpileup -f Neisseria.txt 2.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
+bcftools mpileup -f Neisseria.txt 4.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
+bcftools mpileup -f Neisseria.txt 5.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
+bcftools mpileup -f Neisseria.txt 6.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
+bcftools mpileup -f Neisseria.txt 7.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
+bcftools mpileup -f Neisseria.txt 8.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
+bcftools mpileup -f Neisseria.txt 9.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
+bcftools mpileup -f Neisseria.txt 10.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
+bcftools mpileup -f Neisseria.txt 11.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
 
 
 
