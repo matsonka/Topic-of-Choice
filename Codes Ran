@@ -131,10 +131,12 @@ conda install samtools
 
 Need to convert to a sorted .bam file
 samtools view -b 1.sam | samtools sort - > 1.bam  (did this for both Neisseria and Moraxella)
+samtools view -b 2.sam | samtools sort - > 2.bam
 them putty says "[bam_sort_core] merging from 1 files and 1 in-memory blocks...
 
 Need to index the sorted .bam file
 samtools index 1.bam (did this for both Neisseria and Moraxella)
+samtools index 2.bam 
 
 
 Variant Calling
@@ -180,6 +182,10 @@ samtools faidx Neisseria.fasta
 Prepare Variant Calling on the .bam file
 bcftools mpileup -f Neisseria.fasta 1.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (-using bcftools to take the reference and .bam file and map them together asking it to compile it and then call any variants that it finds)
 (from this for 1.bam in Neisseria I see that the fasta sequence was not found)-we are outputting any variants that are different from our reference and our calls
+bcftools mpileup -f Neisseria.fasta 2.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (from this for 2.bam in Neisseria I see that the fasta sequence was not found)
+
+
+
 
 Filter the variant calls
 bcftools filter --exclud 'QUAL < 30' raw.calls.bcf > calls.vcf (we do this to get rid of all of the questionable varaints so that we only end up with things that we are really confident about)
@@ -210,8 +216,16 @@ cat Neisseria.fasta | bcftools consensus calls.vcf.gz > Neisseria_DSMZ.fasta
 Note: the --sample option not given, applying all records regardless of the genotype
 Warning: Sequence "gi|610425456|gb|CP007524.1|" not in calls.vcf.gz)
 
+The alignments and SNPs could then be visualized. I made another folder that shows that data
 
 
 
+
+
+
+
+BLAST
+makeblastdb -in Neisseria.fasta -dbtype prot -title Neissera_protein
+makeblastdb -in ~/db/nucleotide/Genus_species_DNA_cds.fasta -title Genus_species_DNA -dbtype nucl -out ~/db/nucleotide/Genus_species_DNA
 
 
