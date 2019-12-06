@@ -417,6 +417,41 @@ bowtie2 -x Moraxella -1 ERR3410276_1.fastq.gz -2 ERR3410276_2.fastq.gz -S 9.sam
         20631 (2.38%) aligned >1 times
 78.22% overall alignment rate
 
+ bowtie2 -x Moraxella -1 ERR3410277_1.fastq.gz -2 ERR3410277_2.fastq.gz -S 10.sam
+1521893 reads; of these:
+  1521893 (100.00%) were paired; of these:
+    792680 (52.09%) aligned concordantly 0 times
+    715514 (47.01%) aligned concordantly exactly 1 time
+    13699 (0.90%) aligned concordantly >1 times
+    ----
+    792680 pairs aligned concordantly 0 times; of these:
+      329203 (41.53%) aligned discordantly 1 time
+    ----
+    463477 pairs aligned 0 times concordantly or discordantly; of these:
+      926954 mates make up the pairs; of these:
+        768846 (82.94%) aligned 0 times
+        139771 (15.08%) aligned exactly 1 time
+        18337 (1.98%) aligned >1 times
+74.74% overall alignment rate
+
+
+bowtie2 -x Moraxella -1 ERR3410278_1.fastq.gz -2 ERR3410278_2.fastq.gz -S 11.sam
+1504516 reads; of these:
+  1504516 (100.00%) were paired; of these:
+    1259868 (83.74%) aligned concordantly 0 times
+    239970 (15.95%) aligned concordantly exactly 1 time
+    4678 (0.31%) aligned concordantly >1 times
+    ----
+    1259868 pairs aligned concordantly 0 times; of these:
+      111819 (8.88%) aligned discordantly 1 time
+    ----
+    1148049 pairs aligned 0 times concordantly or discordantly; of these:
+      2296098 mates make up the pairs; of these:
+        2274876 (99.08%) aligned 0 times
+        12688 (0.55%) aligned exactly 1 time
+        8534 (0.37%) aligned >1 times
+24.40% overall alignment rate
+
 
 
 Prepare data for variant calling
