@@ -250,6 +250,174 @@ bowtie2 -x Neisseria -1 ERR903360_1.fastq.gz -2 ERR903360_2.fastq.gz -S 12.sam
 
 
 
+Moraxella:
+bowtie2 -x Moraxella -1 ERR3410267_1.fastq.gz -2 ERR3410267_2.fastq.gz -S 1.sam
+Error, fewer reads in file specified with -1 than in file specified with -2
+terminate called after throwing an instance of 'int'
+(ERR): bowtie2-align died with signal 6 (ABRT) (core dumped)
+
+bowtie2 -x Moraxella -1 ERR3410268_1.fastq.gz -2 ERR3410268_2.fastq.gz -S 1.sam
+1689575 reads; of these:
+  1689575 (100.00%) were paired; of these:
+    595424 (35.24%) aligned concordantly 0 times
+    1075131 (63.63%) aligned concordantly exactly 1 time
+    19020 (1.13%) aligned concordantly >1 times
+    ----
+    595424 pairs aligned concordantly 0 times; of these:
+      436792 (73.36%) aligned discordantly 1 time
+    ----
+    158632 pairs aligned 0 times concordantly or discordantly; of these:
+      317264 mates make up the pairs; of these:
+        252188 (79.49%) aligned 0 times
+        45083 (14.21%) aligned exactly 1 time
+        19993 (6.30%) aligned >1 times
+92.54% overall alignment rate
+
+
+bowtie2 -x Moraxella -1 ERR3410269_1.fastq.gz -2 ERR3410269_2.fastq.gz -S 2.sam
+1490013 reads; of these:
+  1490013 (100.00%) were paired; of these:
+    709722 (47.63%) aligned concordantly 0 times
+    767342 (51.50%) aligned concordantly exactly 1 time
+    12949 (0.87%) aligned concordantly >1 times
+    ----
+    709722 pairs aligned concordantly 0 times; of these:
+      564224 (79.50%) aligned discordantly 1 time
+    ----
+    145498 pairs aligned 0 times concordantly or discordantly; of these:
+      290996 mates make up the pairs; of these:
+        213208 (73.27%) aligned 0 times
+        53464 (18.37%) aligned exactly 1 time
+        24324 (8.36%) aligned >1 times
+92.85% overall alignment rate
+
+
+bowtie2 -x Moraxella -1 ERR3410270_1.fastq.gz -2 ERR3410270_2.fastq.gz -S 3.sam
+1491133 reads; of these:
+  1491133 (100.00%) were paired; of these:
+    631288 (42.34%) aligned concordantly 0 times
+    845160 (56.68%) aligned concordantly exactly 1 time
+    14685 (0.98%) aligned concordantly >1 times
+    ----
+    631288 pairs aligned concordantly 0 times; of these:
+      487969 (77.30%) aligned discordantly 1 time
+    ----
+    143319 pairs aligned 0 times concordantly or discordantly; of these:
+      286638 mates make up the pairs; of these:
+        211086 (73.64%) aligned 0 times
+        53581 (18.69%) aligned exactly 1 time
+        21971 (7.67%) aligned >1 times
+92.92% overall alignment rate
+
+
+bowtie2 -x Moraxella -1 ERR3410271_1.fastq.gz -2 ERR3410271_2.fastq.gz -S 4.sam
+901099 reads; of these:
+  901099 (100.00%) were paired; of these:
+    303693 (33.70%) aligned concordantly 0 times
+    587766 (65.23%) aligned concordantly exactly 1 time
+    9640 (1.07%) aligned concordantly >1 times
+    ----
+    303693 pairs aligned concordantly 0 times; of these:
+      216203 (71.19%) aligned discordantly 1 time
+    ----
+    87490 pairs aligned 0 times concordantly or discordantly; of these:
+      174980 mates make up the pairs; of these:
+        140778 (80.45%) aligned 0 times
+        25376 (14.50%) aligned exactly 1 time
+        8826 (5.04%) aligned >1 times
+92.19% overall alignment rate
+
+
+bowtie2 -x Moraxella -1 ERR3410272_1.fastq.gz -2 ERR3410272_2.fastq.gz -S 5.sam
+1652644 reads; of these:
+  1652644 (100.00%) were paired; of these:
+    890709 (53.90%) aligned concordantly 0 times
+    747804 (45.25%) aligned concordantly exactly 1 time
+    14131 (0.86%) aligned concordantly >1 times
+    ----
+    890709 pairs aligned concordantly 0 times; of these:
+      319038 (35.82%) aligned discordantly 1 time
+    ----
+    571671 pairs aligned 0 times concordantly or discordantly; of these:
+      1143342 mates make up the pairs; of these:
+        993676 (86.91%) aligned 0 times
+        131411 (11.49%) aligned exactly 1 time
+        18255 (1.60%) aligned >1 times
+69.94% overall alignment rate
+
+
+bowtie2 -x Moraxella -1 ERR3410273_1.fastq.gz -2 ERR3410273_2.fastq.gz -S 6.sam
+1682382 reads; of these:
+  1682382 (100.00%) were paired; of these:
+    602052 (35.79%) aligned concordantly 0 times
+    1061744 (63.11%) aligned concordantly exactly 1 time
+    18586 (1.10%) aligned concordantly >1 times
+    ----
+    602052 pairs aligned concordantly 0 times; of these:
+      454796 (75.54%) aligned discordantly 1 time
+    ----
+    147256 pairs aligned 0 times concordantly or discordantly; of these:
+      294512 mates make up the pairs; of these:
+        221549 (75.23%) aligned 0 times
+        52854 (17.95%) aligned exactly 1 time
+        20109 (6.83%) aligned >1 times
+93.42% overall alignment rate
+
+
+bowtie2 -x Moraxella -1 ERR3410274_1.fastq.gz -2 ERR3410274_2.fastq.gz -S 7.sam
+1556305 reads; of these:
+  1556305 (100.00%) were paired; of these:
+    661781 (42.52%) aligned concordantly 0 times
+    879129 (56.49%) aligned concordantly exactly 1 time
+    15395 (0.99%) aligned concordantly >1 times
+    ----
+    661781 pairs aligned concordantly 0 times; of these:
+      505207 (76.34%) aligned discordantly 1 time
+    ----
+    156574 pairs aligned 0 times concordantly or discordantly; of these:
+      313148 mates make up the pairs; of these:
+        241663 (77.17%) aligned 0 times
+        48937 (15.63%) aligned exactly 1 time
+        22548 (7.20%) aligned >1 times
+92.24% overall alignment rate
+
+
+bowtie2 -x Moraxella -1 ERR3410275_1.fastq.gz -2 ERR3410275_2.fastq.gz -S 8.sam
+1437800 reads; of these:
+  1437800 (100.00%) were paired; of these:
+    624536 (43.44%) aligned concordantly 0 times
+    801979 (55.78%) aligned concordantly exactly 1 time
+    11285 (0.78%) aligned concordantly >1 times
+    ----
+    624536 pairs aligned concordantly 0 times; of these:
+      488903 (78.28%) aligned discordantly 1 time
+    ----
+    135633 pairs aligned 0 times concordantly or discordantly; of these:
+      271266 mates make up the pairs; of these:
+        210127 (77.46%) aligned 0 times
+        43786 (16.14%) aligned exactly 1 time
+        17353 (6.40%) aligned >1 times
+92.69% overall alignment rate
+
+
+bowtie2 -x Moraxella -1 ERR3410276_1.fastq.gz -2 ERR3410276_2.fastq.gz -S 9.sam
+1601346 reads; of these:
+  1601346 (100.00%) were paired; of these:
+    807568 (50.43%) aligned concordantly 0 times
+    779578 (48.68%) aligned concordantly exactly 1 time
+    14200 (0.89%) aligned concordantly >1 times
+    ----
+    807568 pairs aligned concordantly 0 times; of these:
+      374712 (46.40%) aligned discordantly 1 time
+    ----
+    432856 pairs aligned 0 times concordantly or discordantly; of these:
+      865712 mates make up the pairs; of these:
+        697414 (80.56%) aligned 0 times
+        147667 (17.06%) aligned exactly 1 time
+        20631 (2.38%) aligned >1 times
+78.22% overall alignment rate
+
+
 
 Prepare data for variant calling
 need to install samtools
