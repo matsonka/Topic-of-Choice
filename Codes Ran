@@ -133,13 +133,16 @@ Need to convert to a sorted .bam file
 samtools view -b 1.sam | samtools sort - > 1.bam  (did this for both Neisseria and Moraxella)
 samtools view -b 2.sam | samtools sort - > 2.bam
 samtools view -b 3.sam | samtools sort - > 3.bam
+samtools view -b 4.sam | samtools sort - > 4.bam
+samtools view -b 5.sam | samtools sort - > 5.bam
 them putty says "[bam_sort_core] merging from 1 files and 1 in-memory blocks...
 
 Need to index the sorted .bam file
 samtools index 1.bam (did this for both Neisseria and Moraxella)
 samtools index 2.bam 
 samtools index 3.bam
-
+samtools index 4.bam
+samtools index 5.bam
 
 
 Variant Calling
@@ -192,8 +195,13 @@ bcftools mpileup -f Neisseria Reference Genome.txt 3.bam | bcftools call -mv -Ob
 Failed to open -: unknown file type")
 To fix this I renamed my file Neisseria Reference Genome.txt to Neisseria.txt
 Then I ran the command
-bcftools mpileup -f Neisseria.txt 3.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf
+bcftools mpileup -f Neisseria.txt 3.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
 
+Now doing this for all of the files
+bcftools mpileup -f Neisseria.txt 1.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
+bcftools mpileup -f Neisseria.txt 2.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf
+bcftools mpileup -f Neisseria.txt 4.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf
+bcftools mpileup -f Neisseria.txt 5.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf
 
 
 
@@ -207,6 +215,7 @@ less calls.vcf (to get out of viewing press q for quit)
 
 Extract the SNPs
 bcftools view -v snps calls.vcf > snp.vcf (show me the SNPs, ignore insertions and deletions and I just want to see SNPs)
+(labeled each one different for each .bam file, example for 1.bam labeled snp1.vcf)
 
 the .vcf files are human readable
 
@@ -214,14 +223,14 @@ the .vcf files are human readable
 
 Make a Consensus fasta assembly
 Zip the .vcf file
-bgzip calls.vcf
+bgzip calls.vcf (labeled each one different for each .bam file, example for 1.bam labeled calls1.vcf)
 
 Index the zipped .vcf.gz file
-bcftools index calls.vcf.gz
+bcftools index calls.vcf.gz (labeled each one different for each .bam file, example for 1.bam labeled calls1.vcf.gz)
 
 
 Make a consensus fasta file
-cat Neisseria.fasta | bcftools consensus calls.vcf.gz > Neisseria_DSMZ.fasta
+cat Neisseria.fasta | bcftools consensus calls.vcf.gz > Neisseria_DSMZ.fasta (labeled each one different for each .bam file, example for 1.bam labeled Neisseria_DSMZ1.fasta)
 (for 1.bam in Neisseria this gave me the warnings: 
 Note: the --sample option not given, applying all records regardless of the genotype
 Warning: Sequence "gi|610425456|gb|CP007524.1|" not in calls.vcf.gz)
@@ -235,7 +244,8 @@ The alignments and SNPs could then be visualized. I made another folder that sho
 
 
 BLAST
+Make a blastable database of protein sequences from the Neisseria protein sequences
 makeblastdb -in Neisseria.fasta -dbtype prot -title Neissera_protein
-makeblastdb -in ~/db/nucleotide/Genus_species_DNA_cds.fasta -title Genus_species_DNA -dbtype nucl -out ~/db/nucleotide/Genus_species_DNA
 
-
+Perform a blastp against the Neisseria protein db with the Moraxella.fasta as your query
+blastp -db Neisseria.fasta -query Moraxella.fasta -out Moraxella_BLAST.txt -outfmt 7
