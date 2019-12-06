@@ -178,17 +178,40 @@ samtools faidx Neisseria.fasta
 
 
 Prepare Variant Calling on the .bam file
-bcftools mpileup -f Neisseria.fasta 1.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf 
-(from this for 1.bam in Neisseria I see that the fasta sequence was not found)
+bcftools mpileup -f Neisseria.fasta 1.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (-using bcftools to take the reference and .bam file and map them together asking it to compile it and then call any variants that it finds)
+(from this for 1.bam in Neisseria I see that the fasta sequence was not found)-we are outputting any variants that are different from our reference and our calls
 
 Filter the variant calls
-bcftools filter --exclud 'QUAL < 30' raw.calls.bcf > calls.vcf
-
+bcftools filter --exclud 'QUAL < 30' raw.calls.bcf > calls.vcf (we do this to get rid of all of the questionable varaints so that we only end up with things that we are really confident about)
+This filters out anything that has a quality of less than 30
 
 Examine all of the variant calls
 less calls.vcf (to get out of viewing press q for quit)
 (from this command in 1.bam for Neisseria I saw that all filters passed and some of the variants are indels)
 
 Extract the SNPs
-bcftools view -v snps calls.vcf > snp.vcf
+bcftools view -v snps calls.vcf > snp.vcf (show me the SNPs, ignore insertions and deletions and I just want to see SNPs)
+
+the .vcf files are human readable
+
+
+
+Make a Consensus fasta assembly
+Zip the .vcf file
+bgzip calls.vcf
+
+Index the zipped .vcf.gz file
+bcftools index calls.vcf.gz
+
+
+Make a consensus fasta file
+cat Neisseria.fasta | bcftools consensus calls.vcf.gz > Neisseria_DSMZ.fasta
+(for 1.bam in Neisseria this gave me the warnings: 
+Note: the --sample option not given, applying all records regardless of the genotype
+Warning: Sequence "gi|610425456|gb|CP007524.1|" not in calls.vcf.gz)
+
+
+
+
+
 
