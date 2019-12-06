@@ -282,7 +282,7 @@ samtools index 8.bam
 samtools index 9.bam
 samtools index 10.bam
 samtools index 11.bam
-
+samtools index 12.bam
 
 
 Variant Calling
@@ -348,7 +348,7 @@ bcftools mpileup -f Neisseria.txt 8.bam | bcftools call -mv -Ob --ploidy 1 -o ra
 bcftools mpileup -f Neisseria.txt 9.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
 bcftools mpileup -f Neisseria.txt 10.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
 bcftools mpileup -f Neisseria.txt 11.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
-
+bcftools mpileup -f Neisseria.txt 12.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf (said [mpileup] 1 samples in 1 input files)
 
 
 Filter the variant calls
