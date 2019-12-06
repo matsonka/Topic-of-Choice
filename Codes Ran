@@ -123,6 +123,132 @@ bowtie2 -x Neisseria -1 ERR903353_1.fastq.gz -2 ERR903353_2.fastq.gz -S 5.sam
 81.76% overall alignment rate
 
 
+ bowtie2 -x Neisseria -1 ERR903354_1.fastq.gz -2 ERR903354_2.fastq.gz -S 6.sam
+2326840 reads; of these:
+  2326840 (100.00%) were paired; of these:
+    812029 (34.90%) aligned concordantly 0 times
+    1380537 (59.33%) aligned concordantly exactly 1 time
+    134274 (5.77%) aligned concordantly >1 times
+    ----
+    812029 pairs aligned concordantly 0 times; of these:
+      199196 (24.53%) aligned discordantly 1 time
+    ----
+    612833 pairs aligned 0 times concordantly or discordantly; of these:
+      1225666 mates make up the pairs; of these:
+        1032864 (84.27%) aligned 0 times
+        119381 (9.74%) aligned exactly 1 time
+        73421 (5.99%) aligned >1 times
+77.81% overall alignment rate
+
+
+bowtie2 -x Neisseria -1 ERR903355_1.fastq.gz -2 ERR903355_2.fastq.gz -S 7.sam
+3837904 reads; of these:
+  3837904 (100.00%) were paired; of these:
+    1369674 (35.69%) aligned concordantly 0 times
+    2242547 (58.43%) aligned concordantly exactly 1 time
+    225683 (5.88%) aligned concordantly >1 times
+    ----
+    1369674 pairs aligned concordantly 0 times; of these:
+      292560 (21.36%) aligned discordantly 1 time
+    ----
+    1077114 pairs aligned 0 times concordantly or discordantly; of these:
+      2154228 mates make up the pairs; of these:
+        1845025 (85.65%) aligned 0 times
+        187138 (8.69%) aligned exactly 1 time
+        122065 (5.67%) aligned >1 times
+75.96% overall alignment rate
+
+
+bowtie2 -x Neisseria -1 ERR903356_1.fastq.gz -2 ERR903356_2.fastq.gz -S 8.sam
+1506459 reads; of these:
+  1506459 (100.00%) were paired; of these:
+    488295 (32.41%) aligned concordantly 0 times
+    924522 (61.37%) aligned concordantly exactly 1 time
+    93642 (6.22%) aligned concordantly >1 times
+    ----
+    488295 pairs aligned concordantly 0 times; of these:
+      111007 (22.73%) aligned discordantly 1 time
+    ----
+    377288 pairs aligned 0 times concordantly or discordantly; of these:
+      754576 mates make up the pairs; of these:
+        625623 (82.91%) aligned 0 times
+        79124 (10.49%) aligned exactly 1 time
+        49829 (6.60%) aligned >1 times
+79.24% overall alignment rate
+
+
+bowtie2 -x Neisseria -1 ERR903357_1.fastq.gz -2 ERR903357_2.fastq.gz -S 9.sam
+1891563 reads; of these:
+  1891563 (100.00%) were paired; of these:
+    748163 (39.55%) aligned concordantly 0 times
+    1035207 (54.73%) aligned concordantly exactly 1 time
+    108193 (5.72%) aligned concordantly >1 times
+    ----
+    748163 pairs aligned concordantly 0 times; of these:
+      175826 (23.50%) aligned discordantly 1 time
+    ----
+    572337 pairs aligned 0 times concordantly or discordantly; of these:
+      1144674 mates make up the pairs; of these:
+        984681 (86.02%) aligned 0 times
+        93255 (8.15%) aligned exactly 1 time
+        66738 (5.83%) aligned >1 times
+73.97% overall alignment rate
+
+
+bowtie2 -x Neisseria -1 ERR903358_1.fastq.gz -2 ERR903358_2.fastq.gz -S 10.sam
+2008171 reads; of these:
+  2008171 (100.00%) were paired; of these:
+    827663 (41.21%) aligned concordantly 0 times
+    1069704 (53.27%) aligned concordantly exactly 1 time
+    110804 (5.52%) aligned concordantly >1 times
+    ----
+    827663 pairs aligned concordantly 0 times; of these:
+      187452 (22.65%) aligned discordantly 1 time
+    ----
+    640211 pairs aligned 0 times concordantly or discordantly; of these:
+      1280422 mates make up the pairs; of these:
+        1114538 (87.04%) aligned 0 times
+        96398 (7.53%) aligned exactly 1 time
+        69486 (5.43%) aligned >1 times
+72.25% overall alignment rate
+
+
+bowtie2 -x Neisseria -1 ERR903359_1.fastq.gz -2 ERR903359_2.fastq.gz -S 11.sam
+2918254 reads; of these:
+  2918254 (100.00%) were paired; of these:
+    994047 (34.06%) aligned concordantly 0 times
+    1752948 (60.07%) aligned concordantly exactly 1 time
+    171259 (5.87%) aligned concordantly >1 times
+    ----
+    994047 pairs aligned concordantly 0 times; of these:
+      215327 (21.66%) aligned discordantly 1 time
+    ----
+    778720 pairs aligned 0 times concordantly or discordantly; of these:
+      1557440 mates make up the pairs; of these:
+        1330595 (85.43%) aligned 0 times
+        142526 (9.15%) aligned exactly 1 time
+        84319 (5.41%) aligned >1 times
+77.20% overall alignment rate
+
+
+bowtie2 -x Neisseria -1 ERR903360_1.fastq.gz -2 ERR903360_2.fastq.gz -S 12.sam
+1904327 reads; of these:
+  1904327 (100.00%) were paired; of these:
+    723362 (37.99%) aligned concordantly 0 times
+    1065929 (55.97%) aligned concordantly exactly 1 time
+    115036 (6.04%) aligned concordantly >1 times
+    ----
+    723362 pairs aligned concordantly 0 times; of these:
+      149075 (20.61%) aligned discordantly 1 time
+    ----
+    574287 pairs aligned 0 times concordantly or discordantly; of these:
+      1148574 mates make up the pairs; of these:
+        991379 (86.31%) aligned 0 times
+        93624 (8.15%) aligned exactly 1 time
+        63571 (5.53%) aligned >1 times
+73.97% overall alignment rate
+
+
 
 
 Prepare data for variant calling
