@@ -145,6 +145,50 @@ samtools faidx Neisseria Reference Genome.txt
 Got the error "[E::fai_build3_core] Failed to open the file Neisseria
 [faidx] Could not load fai index of Neisseria"
 
+I tried downloading VEP and this did not work
+Then I looked on the internet and realized that the the "fail to open the FASTA file" message almost certainly does simply mean that opening the Reference Genome.txt did not work
 
-Prepare Variant Calling
-bcftools mpileup -f Moraxella Reference Genome.txt 1.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf
+Since I copied my fasta into notepad I tried to find another way to get my fasta so I googled and found out that you can send the fasta to a file in genbank
+I went back to the fasta in genbank. I copied the entire genome sequence, and then I clicked Send to-file-FASTA-and checked Show GI
+Doing this downloaded the sequence into a file in my downloads. I then uploaded this file to WinSCP and ran the following commands:
+"samtools faidx Neisseria Reference Sequence.fasta" this gave the error again of [E::fai_build3_core] Failed to open the file Neisseria
+[faidx] Could not load fai index of Neisseria
+So I tried to look at the head of the sequence by typing in the command ead Neisseria Reference Sequence.fasta
+This gave the fllowing output:
+head: cannot open 'Neisseria' for reading: No such file or directory
+head: cannot open 'Reference' for reading: No such file or directory
+head: cannot open 'Sequence.fasta' for reading: No such file or directory
+Then I thought maybe I should just try renaming the file so that it was only one word with .fasta
+So I renamed it Neisseria.fasta in WinSCP
+Then in putty I put in the command head Neisseria.fasta, this gave me the output:
+ >gi|610425456|gb|CP007524.1| Neisseria meningitidis strain 510612, complete genome
+TACCTGAAAAAGCACATAATACTTATGCGTATCCGCCCTAAACACTGCCTTCTTTCTCAATCACTAAAAT
+CCGCGTTTCGCCGCGCGGGTGGGCGACGTGTTCCGTGCCGATTCCTGCGTAGAAGATGTCGCCGCTTTTC
+AACCGAACGATGTGTTCTTCGCCGTTTTCTCGGTAGTGCATATCGACTTCGCCATCCATCACGGCAAACA
+CTTCCTCGCCGTCGTTGACGTGCCATTTGTAGGGCTGGTCCGTCCAGTGCAGGCGCACGGTGGTGCCGTT
+CATATTGGCGATGTCGAGTGCGCCCCATGCGCGGGAAGTGGTGAAGTCGGCAGAGCGGATGGTTTGTGTG
+TTTGACATTGTTTCTCAAGTTTCTTTTTTCAGACGACCTAAACGTCGTCTGAAAATCTCATTTTTATCTG
+AACAATCCCCAGAAGGTCATACCGAGCAAGACCAATACGCCGAACACCATAGCGGCAGCGTAGGTGTAGA
+TAAAGCCTGTTTGGACTTTACGCACTTGCGCGGCAACCGCGCCGACCAGTCTGGCAGAGCCGTTGACAAT
+ACCGTTGTCGATAATGGCGGTATCGCCGACTTTCCAGAAGAAGGTACCCAATGCGCGTGTGCCTTTGGCG
+From here I was guessing it was working
+
+Now I could move onto Indexing the reference for variant calling
+samtools faidx Neisseria.fasta
+
+
+Prepare Variant Calling on the .bam file
+bcftools mpileup -f Neisseria.fasta 1.bam | bcftools call -mv -Ob --ploidy 1 -o raw.calls.bcf 
+(from this for 1.bam in Neisseria I see that the fasta sequence was not found)
+
+Filter the variant calls
+bcftools filter --exclud 'QUAL < 30' raw.calls.bcf > calls.vcf
+
+
+Examine all of the variant calls
+less calls.vcf (to get out of viewing press q for quit)
+(from this command in 1.bam for Neisseria I saw that all filters passed and some of the variants are indels)
+
+Extract the SNPs
+bcftools view -v snps calls.vcf > snp.vcf
+
