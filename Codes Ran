@@ -34,7 +34,9 @@ For some of my mapping of my reads to the reference genome I was getting the fol
 terminate called after throwing an instance of 'int'
 (ERR): bowtie2-align died with signal 6 (ABRT) (core dumped)"
 
+Some of the overall alignment rates for both Neisseria and Moraxella:
 
+Neisseria
 bowtie2 -x Neisseria -1 ERR903349_1.fastq.gz -2 ERR903349_2.fastq.gz -S 1.sam
 2290258 reads; of these:
   2290258 (100.00%) were paired; of these:
@@ -598,3 +600,5 @@ makeblastdb -in Neisseria.fasta -dbtype prot -title Neissera_protein
 
 Perform a blastp against the Neisseria protein db with the Moraxella.fasta as your query
 blastp -db Neisseria.fasta -query Moraxella.fasta -out Moraxella_BLAST.txt -outfmt 7
+
+this was not working, have to use NCBI BLAST
