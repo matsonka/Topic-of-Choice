@@ -602,3 +602,13 @@ Perform a blastp against the Neisseria protein db with the Moraxella.fasta as yo
 blastp -db Neisseria.fasta -query Moraxella.fasta -out Moraxella_BLAST.txt -outfmt 7
 
 this was not working, have to use NCBI BLAST
+
+
+
+Created an alignment rate graph using R Studio
+Used this website as a reference for the codes https://sites.harding.edu/fmccown/r/
+
+
+
+
+
