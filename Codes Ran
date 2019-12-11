@@ -609,6 +609,36 @@ Created an alignment rate graph using R Studio
 Used this website as a reference for the codes https://sites.harding.edu/fmccown/r/
 
 
+#Define 2 vectors
+Moraxella <- c(92.54, 92.85, 92.92, 92.19, 69.94, 93.42, 92.24, 92.69, 78.22, 74.74, 24.40, 89.88, 93.37, 91.92, 92.28, 88.73, 90.25, 92.55, 89.91, 93.45, 77.34, 91.69, 92.77, 90.43, 93.49)
+Neisseria <- c(74.39, 78.26, 66.23, 81.76, 77.81, 77.81, 75.96, 79.24, 73.97, 72.25, 77.20, 73.97, 78.36, 80.41, 76.58, 71.58, 80.93, 76.84, 78.12, 81.33, 67.85, 82.19, 78.30, 75.94, 76.27)
+
+# Graph the Moraxella using a y axis that ranges from 0 to 100
+plot(Moraxella, type="o", col="blue", ylim=c(0,100))
+
+# Graph the Neisseria with red dashed line and square points
+lines(Neisseria, type="o", pch=22, lty=2, col="red")
+
+# Create a title with a black, bold font
+title(main="Alignment Rates", col.main="black", font.main=4)
+
+# Calculate range from 0 to 100 of Moraxella and Neisseria
+g_range <- range(0,Moraxella, Neisseria)
+
+#value in Moraxella or Neisseria vector. Turn off axes and
+#annotations (axis labels) so we can specify them ourself
+plot(Moraxella, type="o", col="blue", ylim=g_range, axes=FALSE, ann=FALSE)
 
 
+# Label the x and y axes with black text
+title(xlab="Reads Mapped", col.lab=rgb(0,0.5,0))
+title(ylab="Alignment Rate (%)", col.lab=rgb(0,0.5,0))
 
+
+# Create a legend at (1, g_range[2]) that is slightly smaller
+# (cex) and uses the same line colors and points used by
+# the actual plots
+legend(1, g_range[2], c("Moraxella", "Neissera"), cex=0.8, col=c("blue", "red"), pch=21:22, lty=1:2);
+
+
+Export the graph and save the image
